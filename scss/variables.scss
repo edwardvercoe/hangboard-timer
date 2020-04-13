@@ -1,0 +1,38 @@
+// Colors
+
+$whi: #fafafa;
+$blk: #202020;
+$l-blk: #202020;
+$l-grey: #C7C5E2;
+$test: #1C75BC;
+
+// Font sizes
+$f-xs: 12px;
+$f-sml: 16px;
+$f-standard: 20px;
+$f-med: 24px;
+$f-lrg: 32px;
+$f-xl: 60px;
+
+
+// Mixins
+
+@mixin mobile {
+    @media (max-width: 899px) { @content; }
+  }
+  @mixin tablet {
+    @media (min-width: 600px) and (max-width: 899px) { @content; }
+  }
+
+  @mixin desktop {
+    @media (min-width: 900px) { @content; }
+  }
+
+  
+  
+  // EG. How to use...
+  
+    // @include mobile {
+    //    font-size: 1rem;
+    // }
+  

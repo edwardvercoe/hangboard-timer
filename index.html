@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <nav>
+    <div class="btn-back hide" onclick="backToForm()">Go back</div>
+    <h1>Simple Hangboard Timer</h1>
+  </nav>
+  <div id="formContainer">
+    <div class="hero"></div>
+    <form>
+      <div>
+        <label for="reps">Reps per set:</label>
+        <input type="number" name="reps" id="repsInput" required>
+      </div>
+      <div>
+        <label for="hangTime">Hang time per rep:</label>
+        <input type="number" name="hangTime" id="hangTimeInput" placeholder="seconds" required>
+      </div>
+      <div>
+        <label for="shortRestInput">Rest time between reps:</label>
+        <input type="number" name="shortRest" id="shortRestInput" required>
+      </div>
+      <div>
+        <label for="sets">Number of sets:</label>
+        <input type="number" name="sets" id="setsInput" required>
+      </div>
+      <div>
+        <label for="longRest">Rest time between sets:</label>
+        <input type="number" name="longRest" id="longRestInput" placeholder="seconds" required>
+      </div>
+      <div id="formSubmit">
+        <button type="button" class="btn-next" onclick="beginExercise()">Next</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="timerContainer" class="hide">
+
+
+    <div class="counter-container">
+      <h3>Reps: <span class="reps-counter">0/0</span></h3>
+      <h3>Sets: <span class="sets-counter">0/0</span></h3>
+    </div>
+
+    <div class="stateTimer-container">
+      <h2 class="state-timer">testytest</h2>
+    </div>
+
+    <div class="timer" onclick="startTimer()">Start Timer!</div>
+    <div class="startTimer reset" onclick="startTimer()">
+      <span>play</span>
+    </div>
+    <div class="resetTimer reset" onclick="resetTimer()">Reset</div>
+  </div>
+
+  <footer>
+    <span>Website built with 💖 by <a href="https://www.instagram.com/eddievercoe/">Edward Vercoe</a></span>
+  </footer>
+  <!-- SCRIPTS -->
+  <script type="text/javascript" src="js/hangboard.js"></script>
+</body>
+
+</html>
