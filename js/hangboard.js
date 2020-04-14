@@ -92,6 +92,7 @@ function resetTimer() {
     timerDisplay.innerHTML = '--:--';
     setsCounter.innerHTML = `${setsComplete}/${setSets}`
     repsCounter.innerHTML = `${repsComplete}/${setReps}`
+    body.style.backgroundColor = "red"
 }
 
 function getShowTime() {
