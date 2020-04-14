@@ -11,6 +11,37 @@
     right: 0;
   }
 
+  .timer-container {
+    width: 100%;
+    height: calc(100vh - 80px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .startTimer,
+    .reset {
+      position: relative;
+      padding: 20px 0;
+      border-radius: 50%;
+      font-size: 24px;
+      text-align: center;
+      color: #fff;
+      background: #A90000;
+      cursor: pointer
+    }
+
+    .reset {
+      margin-bottom: 80px;
+      background: #550000;
+      color: white;
+      width: 14.9%;
+      border-left: 1px solid #990000;
+    }
+
+  }
+
   .stateTimer-container {
     position: absolute;
     top: 50%;
@@ -18,29 +49,7 @@
     transform: translateX(-50%);
   }
 
-  .timer,
-  .reset {
-    position: relative;
-    padding: 20px 0;
-    font-size: 24px;
-    text-align: center;
-    color: #fff;
-    background: #A90000;
-    cursor: pointer
-  }
 
-  .reset {
-    background: #550000;
-    color: white;
-    width: 14.9%;
-    border-left: 1px solid #990000;
-  }
 
-  .reset:hover {
-    background: #CC0000;
-  }
 
-  .lighter {
-    background: #CC0000
-  }
 }

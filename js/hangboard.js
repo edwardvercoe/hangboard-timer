@@ -19,6 +19,7 @@ let running = 0;
 
 let startTime, updatedTime, difference, tInterval, savedTime, setReps, setSets, setShortRestTime, setLongRestTime, setHangTime, workoutState, setsComplete, repsComplete, workoutTimer, stateTime, minutes, seconds, displaySeconds, displayMinutes;
 
+let playTimeout
 
 function beginExercise() {
     setReps = reps.value
@@ -53,14 +54,21 @@ function backToForm() {
 function startTimer() {
     if (!running) {
         clearInterval(tInterval);
+        clearTimeout(playTimeout)
         paused = 0;
         running = 1;
-        startTime = new Date().getTime();
-        tInterval = setInterval(getShowTime, 1000);
+        playTimeout = setTimeout(() => { 
+            startTime = new Date().getTime();
+            tInterval = setInterval(getShowTime, 1000);            
+        }, 3000);
+        startTimerButton.innerHTML = '⏸️'
+
         // change 1 to 1000 above to run script every second instead of every millisecond. one other change will be needed in the getShowTime() function below for this to work. see comment there.   
 
     } else if (!paused) {
         clearInterval(tInterval);
+        clearTimeout(playTimeout)
+        startTimerButton.innerHTML = '▸'
         savedTime = difference;
         paused = 1;
         running = 0;
@@ -71,6 +79,7 @@ function startTimer() {
 
 function resetTimer() {
     clearInterval(tInterval);
+    clearTimeout(playTimeout)
     savedTime = 0;
     difference = 0;
     paused = 0;
@@ -80,7 +89,7 @@ function resetTimer() {
     stateTime = parseInt(setShortRestTime) + 1
     workoutState = "work"
     stateTimerDisplay.innerHTML = '';
-    timerDisplay.innerHTML = 'Start Timer!';
+    timerDisplay.innerHTML = '--:--';
     setsCounter.innerHTML = `${setsComplete}/${setSets}`
     repsCounter.innerHTML = `${repsComplete}/${setReps}`
 }
