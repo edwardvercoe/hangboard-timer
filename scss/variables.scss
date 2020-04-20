@@ -22,11 +22,17 @@ $f-huge: 200px;
     @media (max-width: 899px) { @content; }
   }
   @mixin tablet {
-    @media (min-width: 600px) and (max-width: 899px) { @content; }
+    @media (min-width: 600px) and (max-width: 1023px) { @content; }
   }
 
   @mixin desktop {
-    @media (min-width: 900px) { @content; }
+    @media (min-width: 1024px) { @content; }
+  }
+
+  @mixin tablet-ls {
+    @media only screen 
+and (min-device-width : 600px)
+and (orientation : landscape) { @content;}
   }
 
   
