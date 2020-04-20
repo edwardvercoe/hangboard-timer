@@ -1,0 +1,31 @@
+div.countdown {
+    width: 400vw;
+    height: 100vh;
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    color: $whi;
+    top: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Standard syntax */
+    overflow-x: hidden;
+
+    span {
+        width: 100vw;
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        font-size: $f-huge;
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10+ and Edge */
+        user-select: none; /* Standard syntax */
+
+        @include mobile {
+            font-size: 100px;
+         }
+    }
+}

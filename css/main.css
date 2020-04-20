@@ -1,33 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
 #formContainer {
   width: 100%;
-  height: calc(100% - 80px);
+  height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #1a1a1a;
-}
-#formContainer .hero {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url("/img/hero.jpg");
-  /* The image used */
-  background-color: #1a1a1a;
-  /* Used if the image is unavailable */
-  height: 100%;
-  width: 100%;
-  background-position: center;
-  /* Center the image */
-  background-repeat: no-repeat;
-  /* Do not repeat the image */
-  background-size: cover;
-  /* Resize the background image to cover the entire container */
-  /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
-  opacity: 0.2;
 }
 #formContainer form {
   position: relative;
@@ -72,10 +51,11 @@
   cursor: pointer;
   height: 60px;
   width: 100%;
-  background-color: #5778f3;
+  background-color: #243B55;
   padding: 10px 30px;
   border-radius: 5px;
-  border-bottom: 4px solid #3e4caf;
+  border: 1px solid #0F2027;
+  border-bottom: 4px solid #0F2027;
   transition: 0.1s;
   text-align: center;
 }
@@ -88,69 +68,156 @@
 #timerContainer {
   font-family: sans-serif;
   width: 100vw;
-  margin: 20px auto;
+  height: 100vh;
   min-height: 60px;
-  border-top: 0px;
-}
-#timerContainer .counter-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-#timerContainer .timer-container {
-  width: 100%;
-  height: calc(100vh - 80px);
-  position: relative;
+  color: #fafafa;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
-#timerContainer .timer-container .startTimer {
+#timerContainer .timer-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #fafafa;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.05);
+}
+@media (max-width: 899px) {
+  #timerContainer .timer-container {
+    width: 200px;
+    height: 200px;
+    transform: translateY(-50px);
+  }
+}
+#timerContainer .timer-container .state-name {
+  position: absolute;
+  top: -100px;
+  font-size: 60px;
+  margin: 0;
+}
+@media (max-width: 899px) {
+  #timerContainer .timer-container .state-name {
+    font-size: 32px;
+    top: -70px;
+  }
+}
+#timerContainer .timer-container .stateTimer-container {
   position: relative;
-  height: 80px;
-  width: 80px;
+  font-weight: 200;
+  font-size: 60px;
+}
+#timerContainer .timer-container .startTimer {
+  position: absolute;
+  bottom: -40px;
   border-radius: 50%;
   font-size: 32px;
   text-align: center;
-  color: #fff;
-  background: #A90000;
+  color: #fafafa;
+  border: 2px solid #fafafa;
   cursor: pointer;
 }
-#timerContainer .timer-container .reset {
-  margin-bottom: 80px;
-  background: #550000;
-  color: white;
+#timerContainer .timer-container .startTimer img {
+  position: relative;
+  width: 80px;
+  height: auto;
   padding: 20px;
 }
-#timerContainer .stateTimer-container {
+#timerContainer .timer-container .startTimer .playbtn {
+  left: 4px;
+}
+#timerContainer .counter-container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  width: 100vw;
+  min-height: 120px;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 899px) {
+  #timerContainer .counter-container {
+    min-height: 180px;
+  }
+}
+#timerContainer .counter-container .timer {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: -30px;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.6);
+}
+#timerContainer .counter-container div.counters {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  font-weight: 200;
+}
+#timerContainer .counter-container div.counters:first-of-type span {
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+#timerContainer .counter-container div.counters h3 {
+  margin: 15px 0 0 0;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.6);
+}
+#timerContainer .counter-container div.counters span {
+  display: block;
+  padding: 15px;
+  color: rgba(255, 255, 255, 0.6);
+}
+#timerContainer .reset {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fafafa;
+  padding: 20px;
+  cursor: pointer;
+}
+#timerContainer .reset img {
+  width: 64px;
+  height: auto;
+}
+@media (max-width: 899px) {
+  #timerContainer .reset img {
+    width: 32px;
+  }
 }
 
 nav {
+  position: absolute;
   width: 100%;
   min-height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fafafa;
 }
 nav .btn-back {
   position: absolute;
   top: 0;
   left: 0;
   cursor: pointer;
+  padding: 20px;
 }
-nav h1 {
-  margin: 0 auto;
+nav .btn-back img {
+  width: 44px;
+  height: auto;
+}
+@media (max-width: 899px) {
+  nav .btn-back img {
+    width: 22px;
+  }
 }
 
 footer {
   width: 100%;
   position: absolute;
-  bottom: 0;
+  top: 30px;
   left: 0;
   margin-bottom: 10px;
   display: flex;
@@ -159,7 +226,7 @@ footer {
 footer span {
   width: 100%;
   text-align: center;
-  color: #C7C5E2;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 12px;
 }
 footer span a {
@@ -170,7 +237,7 @@ footer span a {
 footer span a:after {
   content: "";
   position: absolute;
-  z-index: -1;
+  z-index: 2;
   top: 70%;
   left: -0.1px;
   right: -0.1px;
@@ -182,6 +249,105 @@ footer span a:hover::after {
   top: 0;
 }
 
+div.countdown {
+  width: 400vw;
+  height: 100vh;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fafafa;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none;
+  /* Safari */
+  /* IE 10+ and Edge */
+  user-select: none;
+  /* Standard syntax */
+  overflow-x: hidden;
+}
+div.countdown span {
+  width: 100vw;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 200px;
+  -webkit-user-select: none;
+  /* Safari */
+  /* IE 10+ and Edge */
+  user-select: none;
+  /* Standard syntax */
+}
+@media (max-width: 899px) {
+  div.countdown span {
+    font-size: 100px;
+  }
+}
+
+.pulsate-bck {
+  animation: pulsate-bck 0.2s linear both;
+}
+@keyframes pulsate-bck {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.countdown-anim {
+  animation-fill-mode: forwards;
+  animation-name: three, two, one, go;
+  animation-delay: 0s, 1s, 2s, 3s;
+  animation-duration: 1s;
+  z-index: 999 !important;
+}
+
+@keyframes three {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+@keyframes two {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: -100%;
+  }
+  100% {
+    left: -200%;
+  }
+}
+@keyframes one {
+  0% {
+    left: -200%;
+  }
+  50% {
+    left: -200%;
+  }
+  100% {
+    left: -300%;
+  }
+}
+@keyframes go {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+}
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -253,6 +419,8 @@ textarea {
    ========================================================================== */
 html {
   box-sizing: border-box;
+  overflow: hidden;
+  position: fixed;
 }
 
 *,
@@ -271,8 +439,17 @@ body {
   height: 100vh;
   font-family: "Open Sans", sans-serif;
   font-size: 20px;
+  overflow-x: hidden;
 }
 
 .hide {
   display: none !important;
+}
+
+canvas {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

@@ -15,23 +15,27 @@
 </head>
 
 <body>
+  <div class="canvas-interactive-wrapper">
+    <canvas id="canvas-interactive"></canvas>
+  </div>
   <nav>
-    <div class="btn-back hide" onclick="backToForm()">Go back</div>
+    <div class="btn-back hide" onclick="backToForm()">
+      <img src="img/back.svg" alt="go back to form">
+    </div>
     <h1></h1>
   </nav>
   <div id="formContainer">
-    <div class="hero"></div>
     <form>
       <div>
         <label for="reps">Reps per set:</label>
         <input type="number" name="reps" id="repsInput" required>
       </div>
       <div>
-        <label for="hangTime">Hang time per rep:</label>
+        <label for="hangTime">Hang time per rep (sec):</label>
         <input type="number" name="hangTime" id="hangTimeInput" placeholder="seconds" required>
       </div>
       <div>
-        <label for="shortRestInput">Rest time between reps:</label>
+        <label for="shortRestInput">Rest time between reps (sec):</label>
         <input type="number" name="shortRest" id="shortRestInput" required>
       </div>
       <div>
@@ -39,7 +43,7 @@
         <input type="number" name="sets" id="setsInput" required>
       </div>
       <div>
-        <label for="longRest">Rest time between sets:</label>
+        <label for="longRest">Rest time between sets (sec):</label>
         <input type="number" name="longRest" id="longRestInput" placeholder="seconds" required>
       </div>
       <div id="formSubmit">
@@ -51,29 +55,47 @@
   <div id="timerContainer" class="hide">
 
 
-    <div class="counter-container">
-      <h3>Reps: <span class="reps-counter">0/0</span></h3>
-      <h3>Sets: <span class="sets-counter">0/0</span></h3>
-    </div>
-
-    <div class="stateTimer-container">
-      <h2 class="state-timer">testytest</h2>
-    </div>
-
     <div class="timer-container">
-      <div class="timer">--</div>
-      <div class="startTimer reset" onclick="startTimer()">
-        <span>▸</span>
+      <h2 class="state-name">--</h2>
+      <div class="stateTimer-container">
+        <h2 class="state-timer">00</h2>
       </div>
-      <div class="resetTimer reset" onclick="resetTimer()">Reset</div>
+      <div class="startTimer" onclick="startTimer()">
+        <img class="playbtn" src="img/play-arrow.svg" alt="play">
+      </div>
     </div>
+    <div class="resetTimer reset" onclick="resetTimer()"><img src="img/reset-light.png" alt="reset"></div>
+    <div class="counter-container">
+      <span class="timer">--</span>
+      <div class="counters">
+
+        <h3>REPS</h3>
+        <span class="reps-counter">0/0</span>
+      </div>
+      <div class="counters">
+        <h3>SETS</h3>
+        <span class="sets-counter">0/0</span>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="countdown">
+    <span class="cd-timer">3</span>
+    <span class="cd-timer">2</span>
+    <span class="cd-timer">1</span>
+    <span class="cd-timer">Hang!</span>
   </div>
 
   <footer>
     <span>Website built with 💖 by <a href="https://www.instagram.com/eddievercoe/">Edward Vercoe</a></span>
   </footer>
   <!-- SCRIPTS -->
+  <script type="text/javascript" src="js/granim.min.js"></script>
+  <script type="text/javascript" src="js/gradients.js"></script>
   <script type="text/javascript" src="js/hangboard.js"></script>
+
 </body>
 
 </html>

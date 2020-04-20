@@ -3,6 +3,8 @@
 @import "timer";
 @import "nav";
 @import "footer";
+@import "countdown";
+@import "animations";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 
 
@@ -90,6 +92,8 @@ html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    overflow: hidden;
+    position: fixed;
 }
 
 *,
@@ -110,9 +114,18 @@ body {
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
     font-size: $f-standard;
+    overflow-x: hidden;
     
 }
 
 .hide {
     display: none !important;
+}
+
+canvas {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
