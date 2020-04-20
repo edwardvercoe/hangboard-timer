@@ -142,7 +142,7 @@
 }
 @media (max-width: 899px) {
   #timerContainer .counter-container {
-    min-height: 180px;
+    min-height: 140px;
   }
 }
 #timerContainer .counter-container .timer {
