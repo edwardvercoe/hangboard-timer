@@ -88,6 +88,11 @@
   height: 300px;
   background: rgba(255, 255, 255, 0.05);
 }
+@media only screen and (min-device-width: 600px) and (orientation: landscape) {
+  #timerContainer .timer-container {
+    transform: translateY(-80px);
+  }
+}
 @media (max-width: 899px) {
   #timerContainer .timer-container {
     width: 200px;
@@ -135,7 +140,7 @@
   position: relative;
   background: rgba(255, 255, 255, 0.1);
   width: 100vw;
-  min-height: 120px;
+  min-height: 200px;
   margin-top: auto;
   display: flex;
   justify-content: center;
