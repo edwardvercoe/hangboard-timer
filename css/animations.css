@@ -1,0 +1,14 @@
+.pulsate-bck {
+  animation: pulsate-bck 0.2s linear both;
+}
+@keyframes pulsate-bck {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
