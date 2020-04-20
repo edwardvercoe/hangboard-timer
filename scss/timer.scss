@@ -92,6 +92,11 @@
       min-height: 140px;
    }
 
+   @include tablet-ls {
+    min-height: 200px;
+
+  }
+
 
     .timer {
       position: absolute;
