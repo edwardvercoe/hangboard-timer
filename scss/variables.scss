@@ -19,7 +19,7 @@ $f-huge: 200px;
 // Mixins
 
 @mixin mobile {
-    @media (max-width: 899px) { @content; }
+    @media (max-width: 599px) { @content; }
   }
   @mixin tablet {
     @media (min-width: 600px) and (max-width: 1023px) { @content; }

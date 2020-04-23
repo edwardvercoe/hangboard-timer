@@ -20,7 +20,7 @@
   color: #fafafa;
   font-size: 24px;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   #formContainer form {
     font-size: 20px;
     min-width: 90%;
@@ -92,7 +92,7 @@
     transform: translateY(-80px);
   }
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   #timerContainer .timer-container {
     width: 200px;
     height: 200px;
@@ -105,7 +105,7 @@
   font-size: 60px;
   margin: 0;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   #timerContainer .timer-container .state-name {
     font-size: 32px;
     top: -70px;
@@ -139,19 +139,19 @@
   position: relative;
   background: rgba(255, 255, 255, 0.1);
   width: 100vw;
-  min-height: 200px;
+  height: 200px;
   margin-top: auto;
   display: flex;
   justify-content: center;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   #timerContainer .counter-container {
-    min-height: 140px;
+    height: 180px;
   }
 }
 @media only screen and (min-device-width: 600px) and (orientation: landscape) {
   #timerContainer .counter-container {
-    min-height: 200px;
+    height: 140px;
   }
 }
 #timerContainer .counter-container .timer {
@@ -191,7 +191,7 @@
   width: 64px;
   height: auto;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   #timerContainer .reset img {
     width: 32px;
   }
@@ -217,7 +217,7 @@ nav .btn-back img {
   width: 44px;
   height: auto;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   nav .btn-back img {
     width: 22px;
   }
@@ -288,7 +288,7 @@ div.countdown span {
   user-select: none;
   /* Standard syntax */
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   div.countdown span {
     font-size: 100px;
   }
