@@ -17,6 +17,8 @@ const shortRestTime = document.querySelector("#shortRestInput")
 const longRestTime = document.querySelector("#longRestInput")
 const hangTime = document.querySelector("#hangTimeInput")
 
+const audio = document.querySelector('audio')
+
 // Push animation
 
 function pushAnim(x) {
@@ -77,6 +79,7 @@ function startTimer() {
             startTime = new Date().getTime();
             tInterval = setInterval(getShowTime, 1000);
             countdownDiv.classList.remove('countdown-anim')
+            audio.play()
         }, 3250);
 
         startTimerButton.innerHTML = `<img src="img/pause.svg" alt="pause">`
@@ -142,6 +145,7 @@ function getShowTime() {
 
 
     } else if (stateTime == 0) {
+        audio.play()
 
         if (workoutState == "work") {
             repsComplete = repsComplete + 1
