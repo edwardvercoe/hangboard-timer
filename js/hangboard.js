@@ -17,7 +17,6 @@ const shortRestTime = document.querySelector("#shortRestInput")
 const longRestTime = document.querySelector("#longRestInput")
 const hangTime = document.querySelector("#hangTimeInput")
 
-const audio = document.querySelector('audio')
 
 // Push animation
 
@@ -32,7 +31,7 @@ function pushAnim(x) {
 let paused = 0;
 let running = 0;
 
-let startTime, updatedTime, difference, tInterval, savedTime, setReps, setSets, setShortRestTime, setLongRestTime, setHangTime, workoutState, setsComplete, repsComplete, workoutTimer, stateTime,displayStateTime, minutes, seconds, displaySeconds, displayMinutes;
+let startTime, updatedTime, difference, tInterval, savedTime, setReps, setSets, setShortRestTime, setLongRestTime, setHangTime, workoutState, setsComplete, repsComplete, workoutTimer, stateTime,displayStateTime, minutes, seconds, displaySeconds, displayMinutes, audio;
 
 let playTimeout
 
@@ -45,6 +44,7 @@ function beginExercise() {
 
 
     if (setReps.length != 0 && setSets.length != 0 && setShortRestTime.length != 0 && setLongRestTime.length != 0 && setHangTime.length != 0) {
+        audio = new Audio("/audio/fsharp.mp3");
         formContainer.classList.toggle("hide")
         timerContainer.classList.toggle("hide")
         backToFormBtn.classList.toggle("hide")
